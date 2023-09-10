@@ -1,6 +1,6 @@
 package shapes.twodimensionalshapes;
 
-import javafx.scene.shape.Shape;
+import javafx.scene.image.Image;
 import shapes.IShape;
 
 /**
@@ -11,15 +11,8 @@ import shapes.IShape;
  */
 public abstract class TwoDimensionalShape extends IShape {
 
-    private Shape visualShape;
-
-    public TwoDimensionalShape(int numberOfSides, Shape visualShape) {
-        super(numberOfSides);
-        this.visualShape = visualShape;
-    }
-
-    public Shape getVisualShape() {
-        return visualShape;
+    public TwoDimensionalShape(int numberOfSides, Image shapeImage) {
+        super(numberOfSides, shapeImage);
     }
 
     abstract public double getArea();

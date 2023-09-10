@@ -3,34 +3,43 @@
  */
 package cmsc_335_project_2_september_9;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import utils.ConstantValues;
+import utils.LayoutFactory;
+import utils.ShapeFactory;
 
 public class App extends Application {
+
+    private Stage primaryStage = new Stage();
+    Map<String, Node> currentDrawingImageMap = new HashMap<>(
+            Map.of(
+                    ConstantValues.SHAPE_KEY, new Rectangle(),
+                    ConstantValues.IMAGE_KEY, new ImageView()));
 
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Hello World");
-        Button btn = new Button("Say \'Hello World\'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    public void start(Stage stage) {
+        primaryStage = stage;
+        primaryStage.setTitle("Shape Drawing App");
 
-        StackPane root = new StackPane(btn);
-        primaryStage.setScene(new Scene(root, 300, 250));
-        primaryStage.show();
+        ComboBox<ShapeFactory> shapeComboBox = new ComboBox<>();
+        shapeComboBox.getItems().addAll(ShapeFactory.values());
+        shapeComboBox.setOnAction(
+                event -> LayoutFactory.createStage(primaryStage, shapeComboBox.getValue(), shapeComboBox,
+                        currentDrawingImageMap));
+
+        LayoutFactory.createStage(primaryStage, ShapeFactory.values()[0], shapeComboBox, currentDrawingImageMap);
     }
 
 }

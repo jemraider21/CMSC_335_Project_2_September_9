@@ -10,15 +10,9 @@ import shapes.IShape;
  * children classes must inherit
  */
 public abstract class ThreeDimensionalShape extends IShape {
-    private Image shapeImage;
 
     public ThreeDimensionalShape(int numberOfSides, Image shapImage) {
-        super(numberOfSides);
-        this.shapeImage = shapImage;
-    }
-
-    public Image getShapeImage() {
-        return shapeImage;
+        super(numberOfSides, shapImage);
     }
 
     abstract public double getVolume();

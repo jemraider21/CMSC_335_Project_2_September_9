@@ -1,7 +1,9 @@
 package shapes.twodimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.twodimensionalshapes.SquareLikeShape;
 import utils.ConstantValues;
+import utils.TwoDimensionalShapeImageEnum;
 
 /**
  * File name: Square.java
@@ -11,6 +13,7 @@ import utils.ConstantValues;
 public class Square extends SquareLikeShape {
 
     public Square(double width) {
-        super(ConstantValues.SQUARE_SIDES, width, width, new javafx.scene.shape.Rectangle(50, 50, width, width));
+        super(ConstantValues.SQUARE_SIDES, width, width,
+                new Image(TwoDimensionalShapeImageEnum.SQUARE.getImageFromUrl()));
     }
 }

@@ -1,8 +1,10 @@
 package shapes.twodimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.twodimensionalshapes.TwoDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
+import utils.TwoDimensionalShapeImageEnum;
 
 /**
  * File name: Circle.java
@@ -13,7 +15,7 @@ public class Circle extends TwoDimensionalShape {
     private double radius;
 
     public Circle(double radius) {
-        super(ConstantValues.CIRCLE_SIDES, new javafx.scene.shape.Circle(100, 100, Math.min(radius, radius) / 2));
+        super(ConstantValues.CIRCLE_SIDES, new Image(TwoDimensionalShapeImageEnum.CIRCLE.getImageFromUrl()));
         this.radius = radius;
     }
 

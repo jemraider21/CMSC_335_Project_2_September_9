@@ -13,6 +13,9 @@ import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import shapes.twodimensionalshapes.TwoDimensionalShape;
 
 public class DrawShapeFactory {
+    private DrawShapeFactory() {
+    }
+
     public static void drawShape(ShapeFactory shapeType, String value1, Pane drawingPane,
             Map<String, Node> currentDrawingImageMap) {
         drawShape(shapeType, value1, ConstantValues.DEFAULT_NUM_VALUE, drawingPane, currentDrawingImageMap);
@@ -22,6 +25,7 @@ public class DrawShapeFactory {
             String value2, Pane drawingPane, Map<String, Node> currentDrawingImageMap) {
         IShape shape = ShapeFactory.createShape(shapeType, value1, value2);
 
+        resetDrawingPane(drawingPane, currentDrawingImageMap);
         ImageView currentImage = new ImageView(shape.getShapeImage());
         currentDrawingImageMap.put(ConstantValues.IMAGE_KEY, currentImage);
         drawingPane.getChildren().add(currentImage);
@@ -30,7 +34,8 @@ public class DrawShapeFactory {
             showAlertDialog("Calculating Area", "Area", shape.getClass().getSimpleName(),
                     ((TwoDimensionalShape) shape).getArea());
         } else {
-            showAlertDialog("Calculating Volume", "Volume", shape.getClass().getSimpleName(), ((ThreeDimensionalShape) shape).getVolume());
+            showAlertDialog("Calculating Volume", "Volume", shape.getClass().getSimpleName(),
+                    ((ThreeDimensionalShape) shape).getVolume());
         }
     }
 

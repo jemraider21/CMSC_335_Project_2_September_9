@@ -2,7 +2,7 @@ package utils;
 
 import java.io.InputStream;
 
-public enum ThreeDimensionalShapeImageEnum {
+public enum ThreeDimensionalShapeImageEnum implements ShapeImage {
     CONE("cone"),
     CUBE("cube"),
     CYLINDER("cylinder"),
@@ -21,6 +21,6 @@ public enum ThreeDimensionalShapeImageEnum {
     // }
 
     public InputStream getImageFromUrl() {
-        return getClass().getResourceAsStream(String.format("/%s.png", shapeName));
+        return ConstantValues.getImageFromUrl(shapeName);
     }
 }

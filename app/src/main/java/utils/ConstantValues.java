@@ -1,5 +1,7 @@
 package utils;
 
+import java.io.InputStream;
+
 /**
  * File name: ConstantValues.java
  * Name: Jared Morris
@@ -17,4 +19,9 @@ public class ConstantValues {
     public final static int SQUARE_SIDES = 4;
     public final static int TORUS_SIDES = 1;
     public final static int TRIANGLE_SIDES = 3;
+
+    public static InputStream getImageFromUrl(String shapeName) {
+
+        return ConstantValues.class.getResourceAsStream(String.format("/%s.png", shapeName));
+    }
 }

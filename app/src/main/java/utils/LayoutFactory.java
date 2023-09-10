@@ -81,7 +81,7 @@ public class LayoutFactory {
 
         Button drawButton = new Button("Draw");
         drawButton.setOnAction(event -> DrawShapeFactory.drawShape(shapeComboBox.getValue(),
-                value1Field.getText(), drawingPane, currentDrawingImageMap));
+                value1Field.getText(), value2Field.getText(), drawingPane, currentDrawingImageMap));
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10));

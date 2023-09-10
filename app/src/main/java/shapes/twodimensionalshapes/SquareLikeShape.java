@@ -1,5 +1,6 @@
 package shapes.twodimensionalshapes;
 
+import javafx.scene.image.Image;
 import javafx.scene.shape.Shape;
 
 /**
@@ -13,8 +14,8 @@ public abstract class SquareLikeShape extends TwoDimensionalShape {
     protected double width;
     protected double height;
 
-    public SquareLikeShape(int numberOfSides, double width, double height, Shape visualShape) {
-        super(numberOfSides, visualShape);
+    public SquareLikeShape(int numberOfSides, double width, double height, Image shapeImage) {
+        super(numberOfSides, shapeImage);
         this.width = width;
         this.height = height;
     }

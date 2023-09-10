@@ -3,6 +3,8 @@ package utils;
 import java.util.Map;
 
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Shape;
@@ -19,29 +21,26 @@ public class DrawShapeFactory {
     public static void drawShape(ShapeFactory shapeType, String value1,
             String value2, Pane drawingPane, Map<String, Node> currentDrawingImageMap) {
         IShape shape = ShapeFactory.createShape(shapeType, value1, value2);
-        if (shape instanceof TwoDimensionalShape) {
-            drawTwoDimShape((TwoDimensionalShape) shape, drawingPane, currentDrawingImageMap);
-        } else {
-            drawThreeDimShape((ThreeDimensionalShape) shape, drawingPane, currentDrawingImageMap);
-        }
-    }
-
-    private static void drawTwoDimShape(TwoDimensionalShape shape, Pane drawingPane,
-            Map<String, Node> currentDrawingImageMap) {
-        resetDrawingPane(drawingPane, currentDrawingImageMap);
-
-        Shape currentShape = shape.getVisualShape();
-        currentDrawingImageMap.put(ConstantValues.SHAPE_KEY, currentShape);
-        drawingPane.getChildren().add(currentShape);
-    }
-
-    private static void drawThreeDimShape(ThreeDimensionalShape shape, Pane drawingPane,
-            Map<String, Node> currentDrawingImageMap) {
-        resetDrawingPane(drawingPane, currentDrawingImageMap);
 
         ImageView currentImage = new ImageView(shape.getShapeImage());
         currentDrawingImageMap.put(ConstantValues.IMAGE_KEY, currentImage);
         drawingPane.getChildren().add(currentImage);
+
+        if (shape instanceof TwoDimensionalShape) {
+            showAlertDialog("Calculating Area", "Area", shape.getClass().getSimpleName(),
+                    ((TwoDimensionalShape) shape).getArea());
+        } else {
+            showAlertDialog("Calculating Volume", "Volume", shape.getClass().getSimpleName(), ((ThreeDimensionalShape) shape).getVolume());
+        }
+    }
+
+    private static void showAlertDialog(String header, String calculationType, String shapeName,
+            double calculationResult) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(header);
+
+        alert.setContentText(String.format("%s of the %s: %.3f", calculationType, shapeName, calculationResult));
+        alert.showAndWait();
     }
 
     private static void resetDrawingPane(Pane drawingPane, Map<String, Node> currentDrawingImageMap) {

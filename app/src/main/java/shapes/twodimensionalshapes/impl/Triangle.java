@@ -1,7 +1,9 @@
 package shapes.twodimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.twodimensionalshapes.SquareLikeShape;
 import utils.ConstantValues;
+import utils.TwoDimensionalShapeImageEnum;
 
 /**
  * File name: Triangle.java
@@ -12,7 +14,7 @@ public class Triangle extends SquareLikeShape {
 
     public Triangle(double base, double height) {
         super(ConstantValues.TRIANGLE_SIDES, base, height,
-                new javafx.scene.shape.Polygon(50, 50, 50 + base, 50, 50 + base / 2, 50 + height));
+                new Image(TwoDimensionalShapeImageEnum.TRIANGLE.getImageFromUrl()));
     }
 
     public double getArea() {

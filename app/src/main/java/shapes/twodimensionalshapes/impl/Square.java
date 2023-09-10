@@ -11,6 +11,6 @@ import utils.ConstantValues;
 public class Square extends SquareLikeShape {
 
     public Square(double width) {
-        super(ConstantValues.SQUARE_SIDES, width, width);
+        super(ConstantValues.SQUARE_SIDES, width, width, new javafx.scene.shape.Rectangle(50, 50, width, width));
     }
 }

@@ -1,8 +1,10 @@
 package shapes.threedimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
+import utils.ThreeDimensionalShapeImageEnum;
 
 /**
  * File name: Sphere.java
@@ -13,11 +15,11 @@ public class Sphere extends ThreeDimensionalShape {
     private double radius;
 
     public Sphere(double radius) {
-        super(ConstantValues.CIRCLE_SIDES);
+        super(ConstantValues.CIRCLE_SIDES, new Image(ThreeDimensionalShapeImageEnum.SPHERE.getImageFromUrl()));
         this.radius = radius;
     }
 
-    public double getRadius(){
+    public double getRadius() {
         return radius;
     }
 

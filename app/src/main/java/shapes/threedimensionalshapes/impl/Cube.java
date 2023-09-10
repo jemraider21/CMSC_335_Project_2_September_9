@@ -1,8 +1,10 @@
 package shapes.threedimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
+import utils.ThreeDimensionalShapeImageEnum;
 
 /**
  * File name: Cube.java
@@ -13,7 +15,7 @@ public class Cube extends ThreeDimensionalShape {
     private double length;
 
     public Cube(double length) {
-        super(ConstantValues.CUBE_SIDES);
+        super(ConstantValues.CUBE_SIDES, new Image(ThreeDimensionalShapeImageEnum.CUBE.getImageFromUrl()));
         this.length = length;
     }
 

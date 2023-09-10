@@ -12,6 +12,8 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
+apply plugin: "java"
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()

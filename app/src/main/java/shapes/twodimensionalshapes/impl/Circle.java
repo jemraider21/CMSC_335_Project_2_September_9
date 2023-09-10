@@ -13,7 +13,7 @@ public class Circle extends TwoDimensionalShape {
     private double radius;
 
     public Circle(double radius) {
-        super(ConstantValues.CIRCLE_SIDES);
+        super(ConstantValues.CIRCLE_SIDES, new javafx.scene.shape.Circle(100, 100, Math.min(radius, radius) / 2));
         this.radius = radius;
     }
 

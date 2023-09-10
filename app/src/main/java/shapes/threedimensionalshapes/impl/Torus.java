@@ -1,8 +1,10 @@
 package shapes.threedimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
+import utils.ThreeDimensionalShapeImageEnum;
 
 /**
  * File name: Torus.java
@@ -15,7 +17,7 @@ public class Torus extends ThreeDimensionalShape {
     private double radiusMinor;
 
     public Torus(double radiusMajor, double radiusMinor) {
-        super(ConstantValues.TORUS_SIDES);
+        super(ConstantValues.TORUS_SIDES, new Image(ThreeDimensionalShapeImageEnum.TORUS.getImageFromUrl()));
         this.radiusMajor = radiusMajor;
         this.radiusMinor = radiusMinor;
     }

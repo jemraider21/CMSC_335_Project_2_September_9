@@ -1,9 +1,9 @@
 package shapes;
 
-public abstract class Shape {
+public abstract class IShape {
     private int numberOfSides;
 
-    public Shape(int numberOfSides) {
+    public IShape(int numberOfSides) {
         this.numberOfSides = numberOfSides;
     }
 

@@ -1,6 +1,7 @@
 package shapes.threedimensionalshapes;
 
-import shapes.Shape;
+import javafx.scene.image.Image;
+import shapes.IShape;
 
 /**
  * File name: ThreeDimensionalShape.java
@@ -8,10 +9,16 @@ import shapes.Shape;
  * Purpose: A skeleton class used to define the getVolume() method that its
  * children classes must inherit
  */
-public abstract class ThreeDimensionalShape extends Shape {
+public abstract class ThreeDimensionalShape extends IShape {
+    private Image shapeImage;
 
-    public ThreeDimensionalShape(int numberOfSides) {
+    public ThreeDimensionalShape(int numberOfSides, Image shapImage) {
         super(numberOfSides);
+        this.shapeImage = shapImage;
+    }
+
+    public Image getShapeImage() {
+        return shapeImage;
     }
 
     abstract public double getVolume();

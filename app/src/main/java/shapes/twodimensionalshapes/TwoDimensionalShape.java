@@ -1,6 +1,7 @@
 package shapes.twodimensionalshapes;
 
-import shapes.Shape;
+import javafx.scene.shape.Shape;
+import shapes.IShape;
 
 /**
  * File name: TwoDimensionalShape.java
@@ -8,10 +9,17 @@ import shapes.Shape;
  * Purpose: A skeleton class used to define the getArea() method that its
  * children classes must inherit
  */
-public abstract class TwoDimensionalShape extends Shape {
+public abstract class TwoDimensionalShape extends IShape {
 
-    public TwoDimensionalShape(int numberOfSides) {
+    private Shape visualShape;
+
+    public TwoDimensionalShape(int numberOfSides, Shape visualShape) {
         super(numberOfSides);
+        this.visualShape = visualShape;
+    }
+
+    public Shape getVisualShape() {
+        return visualShape;
     }
 
     abstract public double getArea();

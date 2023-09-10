@@ -3,7 +3,7 @@ package shapes;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class ShapesTest {
+public class IShapesTest {
     @Test
     void testGetNumberOfSides() {
         int expectedNumberOfSides = 0;
@@ -13,7 +13,7 @@ public class ShapesTest {
         Assertions.assertEquals(expectedNumberOfSides, new ConcreteShape(expectedNumberOfSides).getNumberOfSides());
     }
 
-    private class ConcreteShape extends Shape {
+    private class ConcreteShape extends IShape {
         public ConcreteShape() {
             this(0);
         }

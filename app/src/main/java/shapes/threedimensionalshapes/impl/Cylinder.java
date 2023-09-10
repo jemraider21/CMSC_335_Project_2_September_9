@@ -1,8 +1,10 @@
 package shapes.threedimensionalshapes.impl;
 
+import javafx.scene.image.Image;
 import shapes.threedimensionalshapes.TallCircularLikeShape;
 import utils.ConstantValues;
 import utils.MathUtils;
+import utils.ThreeDimensionalShapeImageEnum;
 
 /**
  * File name: Cylinder.java
@@ -12,7 +14,8 @@ import utils.MathUtils;
 public class Cylinder extends TallCircularLikeShape {
 
     public Cylinder(double height, double radius) {
-        super(ConstantValues.CYLINDER_SIDES, height, radius);
+        super(ConstantValues.CYLINDER_SIDES, height, radius,
+                new Image(ThreeDimensionalShapeImageEnum.CYLINDER.getImageFromUrl()));
     }
 
     @Override

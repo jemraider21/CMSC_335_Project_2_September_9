@@ -17,6 +17,10 @@ public class Sphere extends ThreeDimensionalShape {
         this.radius = radius;
     }
 
+    public double getRadius(){
+        return radius;
+    }
+
     @Override
     public double getVolume() {
         return (4.0 / 3.0) * ConstantValues.PI * MathUtils.cubeNum(radius);

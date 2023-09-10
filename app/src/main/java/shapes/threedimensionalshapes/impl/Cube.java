@@ -17,6 +17,10 @@ public class Cube extends ThreeDimensionalShape {
         this.length = length;
     }
 
+    public double getLength() {
+        return length;
+    }
+
     @Override
     public double getVolume() {
         return MathUtils.cubeNum(length);

@@ -20,6 +20,14 @@ public class Torus extends ThreeDimensionalShape {
         this.radiusMinor = radiusMinor;
     }
 
+    public double getRadiusMajor() {
+        return radiusMajor;
+    }
+
+    public double getRadiusMinor() {
+        return radiusMinor;
+    }
+
     @Override
     public double getVolume() {
         return (ConstantValues.PI * MathUtils.squareNum(radiusMinor)) * (2 * ConstantValues.PI * radiusMajor);

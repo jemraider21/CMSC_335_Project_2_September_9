@@ -1,6 +1,7 @@
 package shapes.threedimensionalshapes.impl;
 
 import javafx.scene.image.Image;
+import lombok.Getter;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
@@ -12,15 +13,12 @@ import utils.ThreeDimensionalShapeImageEnum;
  * Purpose: Define a Sphere object and calculate its volume
  */
 public class Sphere extends ThreeDimensionalShape {
+    @Getter
     private double radius;
 
     public Sphere(double radius) {
         super(ConstantValues.CIRCLE_SIDES, new Image(ThreeDimensionalShapeImageEnum.SPHERE.getImageFromUrl()));
         this.radius = radius;
-    }
-
-    public double getRadius() {
-        return radius;
     }
 
     @Override

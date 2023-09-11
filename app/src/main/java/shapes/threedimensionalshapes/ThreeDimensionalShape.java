@@ -11,9 +11,9 @@ import shapes.IShape;
  */
 public abstract class ThreeDimensionalShape extends IShape {
 
-    public ThreeDimensionalShape(int numberOfSides, Image shapImage) {
+    protected ThreeDimensionalShape(int numberOfSides, Image shapImage) {
         super(numberOfSides, shapImage);
     }
 
-    abstract public double getVolume();
+    public abstract double getVolume();
 }

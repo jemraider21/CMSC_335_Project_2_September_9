@@ -1,6 +1,7 @@
 package shapes.threedimensionalshapes.impl;
 
 import javafx.scene.image.Image;
+import lombok.Getter;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
@@ -12,15 +13,12 @@ import utils.ThreeDimensionalShapeImageEnum;
  * Purpose: Define a Cube object and calculate its volume
  */
 public class Cube extends ThreeDimensionalShape {
+    @Getter
     private double length;
 
     public Cube(double length) {
         super(ConstantValues.CUBE_SIDES, new Image(ThreeDimensionalShapeImageEnum.CUBE.getImageFromUrl()));
         this.length = length;
-    }
-
-    public double getLength() {
-        return length;
     }
 
     @Override

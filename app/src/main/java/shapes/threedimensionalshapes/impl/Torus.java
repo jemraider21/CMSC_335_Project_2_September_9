@@ -1,6 +1,7 @@
 package shapes.threedimensionalshapes.impl;
 
 import javafx.scene.image.Image;
+import lombok.Getter;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
@@ -11,6 +12,7 @@ import utils.ThreeDimensionalShapeImageEnum;
  * Name: Jared Morris
  * Purpose: Define a Torus object and calculate its volume
  */
+@Getter
 public class Torus extends ThreeDimensionalShape {
 
     private double radiusMajor;
@@ -20,14 +22,6 @@ public class Torus extends ThreeDimensionalShape {
         super(ConstantValues.TORUS_SIDES, new Image(ThreeDimensionalShapeImageEnum.TORUS.getImageFromUrl()));
         this.radiusMajor = radiusMajor;
         this.radiusMinor = radiusMinor;
-    }
-
-    public double getRadiusMajor() {
-        return radiusMajor;
-    }
-
-    public double getRadiusMinor() {
-        return radiusMinor;
     }
 
     @Override

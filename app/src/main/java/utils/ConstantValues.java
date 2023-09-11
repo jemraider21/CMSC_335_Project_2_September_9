@@ -8,17 +8,19 @@ import java.io.InputStream;
  * Purpose: An "enumeration" of constant values used throughout the program
  */
 public class ConstantValues {
-    public final static int CIRCLE_SIDES = 1;
-    public final static int CONE_SIDES = 2;
-    public final static int CUBE_SIDES = 6;
-    public final static int CYLINDER_SIDES = 2;
-    public final static String DEFAULT_NUM_VALUE = "0.0";
-    public final static String IMAGE_KEY = "Image";
-    public final static double PI = Math.PI;
-    public final static String SHAPE_KEY = "Shape";
-    public final static int SQUARE_SIDES = 4;
-    public final static int TORUS_SIDES = 1;
-    public final static int TRIANGLE_SIDES = 3;
+    public static final int CIRCLE_SIDES = 1;
+    public static final int CONE_SIDES = 2;
+    public static final int CUBE_SIDES = 6;
+    public static final int CYLINDER_SIDES = 2;
+    public static final String DEFAULT_NUM_VALUE = "0.0";
+    public static final String IMAGE_KEY = "Image";
+    public static final double PI = Math.PI;
+    public static final String SHAPE_KEY = "Shape";
+    public static final int SQUARE_SIDES = 4;
+    public static final int TORUS_SIDES = 1;
+    public static final int TRIANGLE_SIDES = 3;
+
+    private ConstantValues(){}
 
     public static InputStream getImageFromUrl(String shapeName) {
 

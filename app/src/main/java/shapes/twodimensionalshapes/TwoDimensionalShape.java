@@ -11,9 +11,9 @@ import shapes.IShape;
  */
 public abstract class TwoDimensionalShape extends IShape {
 
-    public TwoDimensionalShape(int numberOfSides, Image shapeImage) {
+    protected TwoDimensionalShape(int numberOfSides, Image shapeImage) {
         super(numberOfSides, shapeImage);
     }
 
-    abstract public double getArea();
+    public abstract double getArea();
 }

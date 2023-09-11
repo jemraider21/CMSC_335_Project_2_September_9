@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 public class LayoutFactory {
     private static Pane drawingPane;
 
+    private LayoutFactory() {
+    }
+
     public static void createStage(Stage primaryStage, ShapeFactory chosenShapeType,
             ComboBox<ShapeFactory> shapeComboBox, Map<String, Node> currentDrawingImageMap) {
         // Create UI elements

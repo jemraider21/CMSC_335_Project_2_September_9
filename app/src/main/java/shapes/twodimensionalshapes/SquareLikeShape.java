@@ -1,6 +1,7 @@
 package shapes.twodimensionalshapes;
 
 import javafx.scene.image.Image;
+import lombok.Getter;
 
 /**
  * File name: SquareLikeShape.java
@@ -8,6 +9,7 @@ import javafx.scene.image.Image;
  * Purpose: A skeleton class used for shapes that need a width and a height
  * defined as properties to calculate its area
  */
+@Getter
 public abstract class SquareLikeShape extends TwoDimensionalShape {
 
     protected double width;
@@ -17,14 +19,6 @@ public abstract class SquareLikeShape extends TwoDimensionalShape {
         super(numberOfSides, shapeImage);
         this.width = width;
         this.height = height;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public double getHeight() {
-        return height;
     }
 
     public double getArea() {

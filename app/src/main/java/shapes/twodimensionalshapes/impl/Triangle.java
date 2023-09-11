@@ -17,6 +17,7 @@ public class Triangle extends SquareLikeShape {
                 new Image(TwoDimensionalShapeImageEnum.TRIANGLE.getImageFromUrl()));
     }
 
+    @Override
     public double getArea() {
         return super.getArea() / 2;
     }

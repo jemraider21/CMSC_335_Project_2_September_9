@@ -15,11 +15,6 @@ public enum ThreeDimensionalShapeImageEnum implements ShapeImage {
         this.shapeName = shapeName;
     }
 
-    // public String getImageUrl() {
-    // return String.format("src/main/java/threedimensionalshapes/imgs/%s.png",
-    // shapeName);
-    // }
-
     public InputStream getImageFromUrl() {
         return ConstantValues.getImageFromUrl(shapeName);
     }

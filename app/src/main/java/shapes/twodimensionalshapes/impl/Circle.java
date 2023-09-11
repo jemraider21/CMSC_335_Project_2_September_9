@@ -1,6 +1,7 @@
 package shapes.twodimensionalshapes.impl;
 
 import javafx.scene.image.Image;
+import lombok.Getter;
 import shapes.twodimensionalshapes.TwoDimensionalShape;
 import utils.ConstantValues;
 import utils.MathUtils;
@@ -12,15 +13,12 @@ import utils.TwoDimensionalShapeImageEnum;
  * Purpose: Define a Circle object and calculate its area
  */
 public class Circle extends TwoDimensionalShape {
+    @Getter
     private double radius;
 
     public Circle(double radius) {
         super(ConstantValues.CIRCLE_SIDES, new Image(TwoDimensionalShapeImageEnum.CIRCLE.getImageFromUrl()));
         this.radius = radius;
-    }
-
-    public double getRadius() {
-        return radius;
     }
 
     @Override

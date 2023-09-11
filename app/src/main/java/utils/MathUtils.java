@@ -7,6 +7,9 @@ package utils;
  * throughout the program
  */
 public class MathUtils {
+    private MathUtils() {
+    }
+
     public static double squareNum(double number) {
         return raiseNumberToPower(number, 2);
     }

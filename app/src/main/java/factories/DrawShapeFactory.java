@@ -1,4 +1,4 @@
-package utils;
+package factories;
 
 import java.util.Map;
 
@@ -11,6 +11,7 @@ import javafx.scene.shape.Shape;
 import shapes.IShape;
 import shapes.threedimensionalshapes.ThreeDimensionalShape;
 import shapes.twodimensionalshapes.TwoDimensionalShape;
+import utils.ConstantValues;
 
 public class DrawShapeFactory {
     private DrawShapeFactory() {
@@ -31,20 +32,22 @@ public class DrawShapeFactory {
         drawingPane.getChildren().add(currentImage);
 
         if (shape instanceof TwoDimensionalShape) {
-            showAlertDialog("Calculating Area", "Area", shape.getClass().getSimpleName(),
+            showAlertDialog("Calculating Area", "Area", shape.getClass().getSimpleName(), shape.getNumberOfSides(),
                     ((TwoDimensionalShape) shape).getArea());
         } else {
-            showAlertDialog("Calculating Volume", "Volume", shape.getClass().getSimpleName(),
+            showAlertDialog("Calculating Volume", "Volume", shape.getClass().getSimpleName(), shape.getNumberOfSides(),
                     ((ThreeDimensionalShape) shape).getVolume());
         }
     }
 
-    private static void showAlertDialog(String header, String calculationType, String shapeName,
+    private static void showAlertDialog(String header, String calculationType, String shapeName, int shapeNumSides,
             double calculationResult) {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle(header);
 
-        alert.setContentText(String.format("%s of the %s: %.3f", calculationType, shapeName, calculationResult));
+        String shapeNumSidesMessage = String.format("Number of sides for %s: %d", shapeName, shapeNumSides);
+        String calculationMessage = String.format("%s of the %s: %.3f", calculationType, shapeName, calculationResult);
+        alert.setContentText(String.format("%s%n%s", shapeNumSidesMessage, calculationMessage));
         alert.showAndWait();
     }
 

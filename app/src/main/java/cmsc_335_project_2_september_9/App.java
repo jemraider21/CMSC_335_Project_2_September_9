@@ -6,6 +6,8 @@ package cmsc_335_project_2_september_9;
 import java.util.HashMap;
 import java.util.Map;
 
+import factories.LayoutFactory;
+import factories.ShapeFactory;
 import javafx.application.Application;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
@@ -13,8 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import utils.ConstantValues;
-import utils.LayoutFactory;
-import utils.ShapeFactory;
 
 public class App extends Application {
 
